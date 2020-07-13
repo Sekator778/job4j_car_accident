@@ -4,30 +4,38 @@
 <html lang="en">
 <head>
     <title>Accident LiST</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+              integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"/>
+        <title>Accident</title>
     <style>
         body {
             background-color: azure;
         }
+
         #table {
-           background-color: darkseagreen;
+            background-color: darkseagreen;
         }
+
         th {
             background-color: chocolate;
         }
+
         h2 {
             color: rebeccapurple;
         }
     </style>
 </head>
 <body>
+<h2 align="center">Base accident for Raccoon city</h2>
+<br>
+<nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand">Автонарушители</a>
+</nav>
+<br>
 <div class="container">
     <div class="table table-bordered">
-        <h2 align="center">Base accident for Raccoon city</h2>
+
         <table class="table table-bordered" id="table">
             <thead>
             <tr>
