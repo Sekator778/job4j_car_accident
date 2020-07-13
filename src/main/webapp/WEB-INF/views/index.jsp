@@ -14,27 +14,41 @@
             background-color: azure;
         }
         #table {
+           background-color: darkseagreen;
+        }
+        th {
             background-color: chocolate;
+        }
+        h2 {
+            color: rebeccapurple;
         }
     </style>
 </head>
 <body>
 <div class="container">
     <div class="table table-bordered">
+        <h2 align="center">Base accident for Raccoon city</h2>
         <table class="table table-bordered" id="table">
             <thead>
             <tr>
                 <th>id</th>
-                <th>Description</th>
-                <th>Date of created</th>
-                <th>Done</th>
+                <th>Name</th>
+                <th>Text</th>
+                <th>Address</th>
             </tr>
             </thead>
-            <tbody id="table2">
+            <tbody>
+            <c:forEach var="accident" items="${ACCIDENTS}" varStatus="status">
+                <tr>
+                    <td>${accident.id}</td>
+                    <td>${accident.name}</td>
+                    <td>${accident.text}</td>
+                    <td>${accident.address}</td>
+                </tr>
+            </c:forEach>
             </tbody>
         </table>
     </div>
 </div>
-
 </body>
 </html>

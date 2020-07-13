@@ -1,9 +1,8 @@
 package ru.job4j.accident.model;
 
 /**
- *
+ * model accident
  */
-
 public class Accident {
     private int id;
     private String name;
