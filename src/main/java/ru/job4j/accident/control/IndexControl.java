@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class IndexControl {
     @GetMapping("/")
-    public String index() {
+    public String index(Model model) {
         return "index";
     }
 }
