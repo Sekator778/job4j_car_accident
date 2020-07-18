@@ -4,7 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import ru.job4j.accident.model.Accident;
-import ru.job4j.accident.service.AccidentService;
+import ru.job4j.accident.repository.AccidentJdbcTemplate;
 
 import java.util.List;
 
@@ -16,11 +16,12 @@ import java.util.List;
  */
 @Controller
 public class IndexControl {
-    private final AccidentService service;
+    private final AccidentJdbcTemplate service;
 
-    public IndexControl(AccidentService service) {
+    public IndexControl(AccidentJdbcTemplate service) {
         this.service = service;
     }
+
 
     /**
      * method register list accidents for display index.jsp

@@ -43,12 +43,12 @@ public class AccidentMem {
      * method for fill in store
      */
     private void init() {
-        Accident accident1 = new Accident(1, "Bob", "some accident speed over limit", "Kytyzova 15");
-        Accident accident2 = new Accident(2, "Garson", "easy accident cross two white lane", "Korolyova 26");
-        Accident accident3 = new Accident(3, "Karlson", "hard accident riding without a belt", "Koshkina 7");
-        addAccident(accident1);
-        addAccident(accident2);
-        addAccident(accident3);
+//        Accident accident1 = new Accident(1, "Bob", "some accident speed over limit", "Kytyzova 15");
+//        Accident accident2 = new Accident(2, "Garson", "easy accident cross two white lane", "Korolyova 26");
+//        Accident accident3 = new Accident(3, "Karlson", "hard accident riding without a belt", "Koshkina 7");
+//        addAccident(accident1);
+//        addAccident(accident2);
+//        addAccident(accident3);
     }
 
     /**

@@ -43,8 +43,6 @@
             <tr>
                 <th>id</th>
                 <th>Name</th>
-                <th>Text</th>
-                <th>Address</th>
                 <th></th>
             </tr>
             </thead>
@@ -54,10 +52,7 @@
                     <form action="<c:url value='/edit'/>" method="GET">
                         <td><input type="hidden" name="id" value="${accident.id}">${accident.id}</td>
                         <td><input type="hidden" name="name" value="${accident.name}">${accident.name}</td>
-                        <td><input type="hidden" name="text" value="${accident.text}">${accident.text}</td>
-                        <td><input type="hidden" name="address" value="${accident.address}">${accident.address}</td>
                         <td><input name="submit" type="submit" value="Редактировать" class="btn btn-info">
-
                     </form>
                 </tr>
             </c:forEach>
