@@ -1,5 +1,7 @@
 package ru.job4j.accident.repository;
 
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Repository;
@@ -11,6 +13,8 @@ import java.util.List;
 @Repository
 public class AccidentHibernate {
     private final SessionFactory sessionFactory;
+    private final Logger LOG = LogManager.getLogger(AccidentHibernate.class.getName());
+
 
     public AccidentHibernate(SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
@@ -20,6 +24,9 @@ public class AccidentHibernate {
         try (Session session = sessionFactory.openSession()) {
             session.save(accident);
             return accident;
+        } catch (Exception e) {
+            LOG.error("session cannot saved", e);
+            return null;
         }
     }
 

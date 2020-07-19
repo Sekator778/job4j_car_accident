@@ -5,12 +5,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import ru.job4j.accident.model.Accident;
-import ru.job4j.accident.repository.AccidentHibernate;
+import ru.job4j.accident.service.AccidentServiceHbm;
+
 @Controller
 public class AccidentControl {
-    private final AccidentHibernate accidents;
+    private final AccidentServiceHbm accidents;
 
-    public AccidentControl(AccidentHibernate accidents) {
+    public AccidentControl(AccidentServiceHbm accidents) {
         this.accidents = accidents;
     }
     @GetMapping("/create")

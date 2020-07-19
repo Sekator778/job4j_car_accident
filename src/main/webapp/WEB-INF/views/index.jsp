@@ -28,7 +28,7 @@
         <title>Accident</title>
     </head>
 <body>
-<h2 align="center">Base accident for Raccoon city</h2>
+<h2 align="center">Accident Base of Raccoon city</h2>
 <br>
 <nav class="navbar navbar-dark bg-dark">
     <a class="navbar-brand">Автонарушители</a>
@@ -37,7 +37,6 @@
 <br>
 <div class="container">
     <div class="table table-bordered">
-
         <table class="table table-bordered" id="table">
             <thead>
             <tr>
@@ -59,7 +58,8 @@
                         <td><input type="hidden" name="address" value="${accident.address}">${accident.address}</td>
                         <td>
                             <input type="submit" class="button" name="edit" value="Edit">
-                            <input type="submit" class="button" name="delete"  onclick="<c:url value='/delete'/>" method="POST" value="Delete">
+                            <input type="submit" class="button" name="delete" onclick="<c:url value='/delete'/>"
+                                   method="POST" value="Delete">
                         </td>
                     </form>
                 </tr>
