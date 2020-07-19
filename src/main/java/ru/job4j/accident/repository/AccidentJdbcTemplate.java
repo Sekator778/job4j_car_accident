@@ -10,7 +10,7 @@ import java.util.List;
  * repository class for work with DB using JdbcTemplate
  * through layer JdbcConfig where read properties and init pool
  */
-@Repository
+//@Repository
 public class AccidentJdbcTemplate {
     private final JdbcTemplate jdbcTemplate;
 
