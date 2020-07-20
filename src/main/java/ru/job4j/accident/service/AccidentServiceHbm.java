@@ -36,4 +36,9 @@ public class AccidentServiceHbm implements AccidentService {
     public List<Accident> findAll() {
         return hibernate.findAll();
     }
+
+    public void deleteAccidentById(String id) {
+        hibernate.deleteAccidentById(id);
+    }
+
 }

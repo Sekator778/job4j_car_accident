@@ -5,6 +5,11 @@
 <head>
     <title>Accident LiST</title>
     <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
               integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
               crossorigin="anonymous"/>
@@ -25,6 +30,16 @@
                 color: rebeccapurple;
             }
         </style>
+        <script>
+            function del2() {
+                $.ajax({
+                    type: "POST",
+                    url: window.location + "delete/" + $('#id').val()
+                });
+                window.location.reload(true);
+            }
+
+        </script>
         <title>Accident</title>
     </head>
 <body>
@@ -35,7 +50,7 @@
     <a class="navbar-brand" href="<c:url value='/create'/>">Добавить инцидент</a>
 </nav>
 <br>
-<div class="container">
+<form name="dataForm" class="container">
     <div class="table table-bordered">
         <table class="table table-bordered" id="table">
             <thead>
@@ -52,14 +67,15 @@
             <c:forEach var="accident" items="${ACCIDENTS}" varStatus="status">
                 <tr>
                     <form action="<c:url value='/edit'/>" method="GET">
-                        <td><input type="hidden" name="id" value="${accident.id}">${accident.id}</td>
-                        <td><input type="hidden" name="name" value="${accident.name}">${accident.name}</td>
-                        <td><input type="hidden" name="text" value="${accident.text}">${accident.text}</td>
-                        <td><input type="hidden" name="address" value="${accident.address}">${accident.address}</td>
+                        <td><input type="hidden" name="id" id="id" value="${accident.id}">${accident.id}</td>
+                        <td><input type="hidden" name="name" id="name" value="${accident.name}">${accident.name}</td>
+                        <td><input type="hidden" name="text" id="text" value="${accident.text}">${accident.text}</td>
+                        <td><input type="hidden" name="address" id="address"
+                                   value="${accident.address}">${accident.address}</td>
+                        <td><input type="submit" class="button" name="edit" value="Edit"></td>
                         <td>
-                            <input type="submit" class="button" name="edit" value="Edit">
-                            <input type="submit" class="button" name="delete" onclick="<c:url value='/delete'/>"
-                                   method="POST" value="Delete">
+                            <input type="button" class="form-control" style="background-color: lightyellow"
+                                   onclick="return del2();" value="Delete">
                         </td>
                     </form>
                 </tr>
@@ -67,6 +83,6 @@
             </tbody>
         </table>
     </div>
-</div>
+</form>
 </body>
 </html>

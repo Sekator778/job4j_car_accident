@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import ru.job4j.accident.model.Accident;
 
+import javax.persistence.Query;
 import java.util.List;
 
 @Repository
@@ -38,9 +39,21 @@ public class AccidentHibernate {
                     .list();
         }
     }
+
     public void deleteAccident(Accident accident) {
-        try(Session session = sessionFactory.openSession()) {
+        try (Session session = sessionFactory.openSession()) {
             session.delete(accident);
+        }
+    }
+
+    public void deleteAccidentById(String id) {
+        try (Session session = sessionFactory.openSession()) {
+            session.beginTransaction();
+            Accident accident = new Accident();
+            accident.setId(Integer.parseInt(id));
+            session.delete(accident);
+            session.getTransaction().commit();
+            session.close();
         }
     }
 }
