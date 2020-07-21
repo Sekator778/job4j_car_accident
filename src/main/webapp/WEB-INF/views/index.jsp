@@ -54,6 +54,10 @@
     <a class="navbar-brand" href="<c:url value='/create'/>">Добавить инцидент</a>
 </nav>
 <br>
+<div class="container" align="center">
+   <h3>Login as : ${user.username}</h3>
+</div>
+<br>
 <div class="container">
     <table class="table table-bordered" id="table">
         <thead>
